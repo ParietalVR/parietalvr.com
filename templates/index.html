@@ -1,0 +1,51 @@
+{% extends "templates/base.html" %}
+{% set active_page = "index" %}
+{% block title %}Parietal VR{% endblock %}
+{% block body %}
+
+<a name="index"></a> 
+
+<div class="container-fluid">
+
+  <h1 class="text-center">Parietal VR</h1>
+  <hr/>
+  
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">      
+      Column 1
+      <br/>
+      {{ lipsum(1) }}
+    </div>
+    <div class="col-md-4">
+      Column 2
+      <br/>
+      {{ lipsum(1) }}
+    </div>
+    <div class="col-md-3">
+		Column 3
+      <br/>
+      {{ lipsum(1) }}
+    </div>
+  </div>
+
+  <a name="blog"></a> 
+  <br/>
+  <hr/>
+  <h1 class="text-center">Blog</h1>
+
+  <a name="presentations"></a> 
+  <br/>
+  <hr/>
+  <h1 class="text-center">Presentations</h1>  
+
+  <a name="videos"></a> 
+  <br/>
+  <hr/>
+  <h1 class="text-center">Videos</h1>
+
+  
+</div>
+
+
+
+{% endblock %}
