@@ -24,19 +24,45 @@
     {% include 'templates/includes/json_ld.html' %}
     <style type="text/css">
       
-      body#background {
-        background-color: #000; 
-        background-image: url('img/homepage_main_image.jpg'); 
-        background-repeat: no-repeat; 
-        background-position: center;
-        background-attachment: fixed;       
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover; 
+      html {
+      	height:100%;
+       	min-height:100%;
       }
-
       
+      body {
+        /* Location of the image */
+        background-image: url(img/homepage_main_image.jpg);
+			
+        /* height is needed for chrome on android */
+        min-height:100%;
+        /*height: 100%;*/
+        
+        /* Background image is centered vertically and horizontally at all times */
+        background-position: center center;
+
+        /* Background image doesn't tile */
+        background-repeat: no-repeat;
+
+        /* Background image is fixed in the viewport so that it doesn't move when 
+           the content's height is greater than the image's height */
+        background-attachment: fixed;
+
+        /* This is what makes the background image rescale based
+           on the container's size */
+        background-size: cover;
+
+        /* Set a background color that will be displayed
+           while the background image is loading */
+        background-color: #464646;
+		}
+      
+      @media only screen and (max-width: 767px) {
+        body {
+          /* The file size of this background image is much smaller
+             to improve page load speed on mobile internet connections */
+          background-image: url(img/homepage_main_image_mobile.jpg);
+        }
+      }
       /* http://getbootstrap.com/examples/sticky-footer-navbar/ */
       /* Sticky footer styles -------------------------------------------------- */
       /*
@@ -60,7 +86,7 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 230px;
+        height: 200px;
         color: white;
       }
 
@@ -75,7 +101,7 @@
       
     </style>
   </head>
-  <body id="background">
+  <body >
     {% include 'templates/includes/google_tag_manager.html' %}
 
     {% set navigation_bar = [
